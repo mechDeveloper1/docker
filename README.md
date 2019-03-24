@@ -2,18 +2,22 @@
 
 ## Basic docker commands
 
-docker version
+`docker version`
 
-docker info
+`docker info`
 
-docker ps 
+`docker ps`
 
-docker ps -a
+`docker ps -a`
 
-docker images
+`docker images`
 
-docker search <imageName>
+`docker search <imageName>`
 
-docker pull <imageName>
+`docker pull <imageName>`
 
-docker start -p <HostPort>:<ContainerPort> <imageName>
+`docker start -p <HostPort>:<ContainerPort> <imageName>`
+
+`docker attach <containerId>`
+
+`docker exec <containerId> <command>`
