@@ -48,3 +48,6 @@ RUN Write-Host ('Verifying sha256 ({0}) ...' -f $env:JAVA_OJDKBUILD_SHA256); \
         Remove-Item ojdkbuild.zip -Force; \
         \
         Write-Host 'Complete.';
+
+# docker command to build image from this Dockerfile
+# docker build -t labs/openjdk-8u121:nanoserver .
