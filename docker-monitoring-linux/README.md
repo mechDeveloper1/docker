@@ -7,8 +7,11 @@
 To configure the Docker daemon as a Prometheus target, you need to specify the metrics-address. The best way to do this is via the daemon.json, which is located at one of the following locations by default. If the file does not exist, create it.
 
 Linux: `/etc/docker/daemon.json`
+
 Windows Server: `C:\ProgramData\docker\config\daemon.json`
+
 Docker Desktop for Mac / Docker Desktop for Windows: Click the Docker icon in the toolbar, select Preferences, then select Daemon. Click Advanced.
+
 If the file is currently empty, paste the following:
 
 `{
@@ -21,7 +24,9 @@ Save the file, or in the case of Docker Desktop for Mac or Docker Desktop for Wi
 Docker now exposes Prometheus-compatible metrics on port 9323.
 
 ### Setps to configure boot2docker machine for docker to expose metrics on port 9323
+
 https://github.com/boot2docker/boot2docker#readme
+
 `docker-machine ssh default`
 
 Docker Machine auto logs in using the generated SSH key, but if you want to SSH into the machine manually (or you're not using a Docker Machine managed VM), the credentials are:
@@ -41,18 +46,26 @@ press i to insert text
 press esc and :wq to write data to file
 
 check data 
+
 `cat /etc/docker/daemon.json`
 
 restart docker service 
+
 `sudo /etc/init.d/docker restart`
 
 check the metrics from docker machine by accessing following url
+
 http://192.168.99.100:9323/metrics
 
 Note: 192.168.99.100 is my docker-machine ip and default is my docker-machine name
 
 ### create a new folder in C:\Users folder of your computer as this folder is shared with boot2docker machine 
+
 `C:\Users\docker-monitoring\monitoring-linux\tmp\prometheus.yml`
+
+metrics endpoints are defined in prometheus.yml, once prometheus container is up we can check endpoints using following url -
+
+http://192.168.99.100:9090/targets
 
 
 ## prometheus
