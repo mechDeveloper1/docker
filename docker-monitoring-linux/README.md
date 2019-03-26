@@ -59,11 +59,11 @@ Note: 192.168.99.100 is my docker-machine ip and default is my docker-machine na
 https://prometheus.io/docs/prometheus/latest/installation/
 
 ### docker command to run prometheus
-`docker run -d -p 9090:9090 \
-
+```
+docker run -d -p 9090:9090 \
   -v //c/Users/docker-monitoring/monitoring-linux/tmp/prometheus.yml:/etc/prometheus/prometheus.yml \
-
-  prom/prometheus`
+  prom/prometheus
+  ```
  
 ## cadvisor
 ### monitoring docker container metrics using cadvisor (only linux host) 
@@ -72,15 +72,13 @@ https://prometheus.io/docs/guides/cadvisor/
 ## cadvisor (works only on linux)
 https://github.com/google/cadvisor
  
- `docker run \
-  
+ ```
+ docker run \
   --publish=8080:8080 \
-  
   --detach=true \
-  
   --name=cadvisor \
-  
-  google/cadvisor:latest`
+  google/cadvisor:latest
+  ```
   
 ## visualization with grafana
 http://docs.grafana.org/installation/docker/
