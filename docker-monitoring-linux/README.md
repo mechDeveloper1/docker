@@ -98,12 +98,17 @@ http://docs.grafana.org/installation/docker/
   
 `docker run -d -p 3000:3000 grafana/grafana`
 
-access grafana on browser  http://<docker-machine ip>:3000
+access grafana on browser  
+
+`http://192.168.99.100:3000`
+
 default username admin
+
 default password admin
 
-add datasource prometheus
-
+add datasource for grafana 
+ 
+prometheus
 HTTP url http://192.168.99.100:9090
 
 click Save & Test
