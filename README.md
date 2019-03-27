@@ -128,6 +128,8 @@
 
 `docker stack rm <stackName>`
 
+## docker secrets
+
 ### create docker secret
 
 `docker secret create <secretName> <secretSourcePath>`
@@ -135,6 +137,16 @@
 ### list docker secret
 
 `docker secret ls`
+
+
+## docker configs
+`docker config create`
+
+`docker config inspect`
+
+`docker config ls`
+
+`docker config rm`
 
 ### list networks
 
