@@ -130,6 +130,10 @@
 
 ## docker secrets
 
+docker secrets are all mounted in
+
+`C:\ProgramData\Docker\secrets\<secretName>`
+
 ### create docker secret
 
 `docker secret create <secretName> <secretSourcePath>`
@@ -140,6 +144,15 @@
 
 
 ## docker configs
+
+config for containers are all mounted in
+
+`C:\ProgramData\Docker\internal\configs\<configName>`
+
+Symbolic links are used to point from there to the desired target of the config within the container. The default target is 
+
+`C:\ProgramData\Docker\configs\`
+
 `docker config create`
 
 `docker config inspect`
