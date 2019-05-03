@@ -1,5 +1,11 @@
 # docker-machine
 
+https://docs.docker.com/machine/
+
+## boot2docker
+
+https://docs.docker.com/machine/
+
 ## basic docker-machine commands
 
 ### show the docker machine version or a machine docker version
@@ -17,6 +23,16 @@
 ### create a machine
 
 `docker-machine create default`
+
+
+### create a machine with proxy
+docker-machine create -d virtualbox \
+    --engine-env HTTP_PROXY=http://example.com:8080 \
+    --engine-env HTTPS_PROXY=https://example.com:8080 \
+    --engine-env NO_PROXY=example2.com \
+    proxybox
+
+
 
 ### remove a machine
 
@@ -54,6 +70,10 @@
 
 `docker-machine start default`
 
+### get ip of a running machine
+
+`docker-machine ip default`
+
 ### upgrade a machine to the latest version of docker
 
 `docker-machine upgrade docker`
@@ -62,4 +82,14 @@
 
 `docker-machine ssh default`
 
-`sudo -i` // root user for boot2docker linux 
+`sudo -i` // change to root user for boot2docker linux 
+
+### SSH into VM
+`$ docker-machine ssh default`
+Docker Machine auto logs in using the generated SSH key, but if you want to SSH into the machine manually (or you're not using a Docker Machine managed VM), the credentials are:
+```
+user: docker
+pass: tcuser
+```
+### restart docker from inside boot2docker
+`/etc/init.d/docker restart`
